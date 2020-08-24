@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.feifei.springcloud.dao.PaymentDao">
+    <!-- 添加
+         设置useGeneratedKeys为true，返回数据库自动生成的记录主键id
+         keyProperty="id" : 获取  key的值
+    -->
+    <insert id="create" parameterType="Payment" useGeneratedKeys="true" keyProperty="id">
+        insert into payment(serial) values(#{serial});
+    </insert>
+    <!-- 查询 -->
+    <resultMap id="BaseResultMap" type="com.feifei.springcloud.pojo.Payment" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <id column="serial" property="serial" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="getPaymentbyId" parameterType="Long" resultMap="BaseResultMap">
+        select * from payment where id = #{id};
+    </select>
+
+
+
+</mapper>
+
