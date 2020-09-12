@@ -24,7 +24,7 @@
         </dependency>
         <dependency>
             <groupId>com.feifei.springcloud</groupId>
-            <artifactId>cloud-api-common</artifactId>
+            <artifactId>cloud-api-commons</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
